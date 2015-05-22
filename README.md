@@ -18,3 +18,7 @@ A Semi-External Landau Vishkin algorithm for solving the Approximated Pattern Ma
 	Given a Text T, a Pattern P, the number of errors k and a output file output.
 
 	See examle.cpp for more details.
+
+	Before running the example, however, one must set the LD_LIBRARY_PATH environment variable:
+
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<absolut path to lib folder within the project>
