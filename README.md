@@ -24,7 +24,10 @@ make install
 ```
 
 ## Running 
-We have provided a full functional example of running the Landau Vishkin Algorithm, 
-Given a Text T, a Pattern P, the number of errors k and a output file output.
+We have provided a full functional example of running the Landau Vishkin Algorithm, which is instaled in the bin folder
+after the previous commands.
 
-In the folder example.
+To execute one must do
+```shell
+./LandauVishkin <text> <pattern> <number of errors> <output>
+```
