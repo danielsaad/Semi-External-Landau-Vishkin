@@ -8,7 +8,7 @@ A Semi-External Landau Vishkin algorithm for solving the Approximated Pattern Ma
 
 	First install libdivsufort by executing the following commands:
 
-	```sh
+	```shell
 	cd external
 	cd libdivsufsort-2.0.1
 	bash install.sh
@@ -16,7 +16,7 @@ A Semi-External Landau Vishkin algorithm for solving the Approximated Pattern Ma
 
 	To compile the library and the example, one must execute the following commands:
 	
-	```sh
+	```shell
 	cd build
 	cmake ..
 	make
