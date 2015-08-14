@@ -1,1 +1,0 @@
-/usr/bin/cc   -Wall -O3 -DNDEBUG -fomit-frame-pointer    CMakeFiles/unbwt.dir/unbwt.o  -o unbwt  -L/home/daniel/Códigos/Semi-External-Landau-Vishkin/external/libdivsufsort-2.0.1/build/examples/../lib -rdynamic ../lib/libdivsufsort.a -Wl,-rpath,/home/daniel/Códigos/Semi-External-Landau-Vishkin/external/libdivsufsort-2.0.1/build/examples/../lib 
