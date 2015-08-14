@@ -1,3 +1,3 @@
-add_library(lvlib STATIC  LandauVishkin.cpp RMQ.cpp text.cpp)
+add_library(lv STATIC  LandauVishkin.cpp RMQ.cpp text.cpp)
 
-install(TARGETS lvlib ARCHIVE DESTINATION lib)
+install(TARGETS lv ARCHIVE DESTINATION lib)
