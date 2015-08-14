@@ -27,7 +27,13 @@ make install
 We have provided a full functional example of running the Landau Vishkin Algorithm, which is instaled in the bin folder
 after the previous commands.
 
+This examples executes  variations of such algorithm presented in our library.
 To execute one must do
 ```shell
 ./LandauVishkin <text> <pattern> <number of errors> <output>
 ```
+
+
+## Description of Experiments
+A full paper describing experiments is available in a pdf file called
+"Daniel Saad Nogueira Nunes Mauricio Ayala-Rincon Semi External Landau Vishkin Full Paper.pdf"
