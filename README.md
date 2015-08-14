@@ -6,9 +6,17 @@ A Semi-External Landau Vishkin algorithm for solving the Approximated Pattern Ma
 	In order to compile the Landau-Vishkin Library, one must have cmake installed with g++ 
 	with version 4.8 or higher in order to support C++11.
 
+	First install libdivsufort by executing the following commands:
+
+	```sh
+	cd external
+	cd libdivsufsort-2.0.1
+	bash install.sh
+	```
+
 	To compile the library and the example, one must execute the following commands:
 	
-	```bash
+	```sh
 	cd build
 	cmake ..
 	make
