@@ -7,7 +7,7 @@ set(CMAKE_CXX_FLAGS "-O2 -std=c++11")
 
 
 
-set(LIBDIVSUFSORT_DIR "${CMAKE_BINARY_DIR}/external/libdivsufsort-2.0.1")
+set(LIBDIVSUFSORT_DIR "${CMAKE_SOURCE_DIR}/external/libdivsufsort-2.0.1")
 include_directories("${LIBDIVSUFSORT_DIR}/include")
 include_directories("${CMAKE_SOURCE_DIR}/include")
 
