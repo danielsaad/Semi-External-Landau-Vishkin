@@ -86,7 +86,7 @@ void landauVishkin_DMin(Text* text_text,Text* pattern_text,integer errors, Text*
     int fd;
 
 
-    char tmp_name[] = "/media/SSD/fileXXXXXX";
+    char tmp_name[] = "/tmp/fileXXXXXX";
 
     //generate filename
     fd = mkstemp(tmp_name);
@@ -187,7 +187,7 @@ void landauVishkin_RMQ(Text* text_text,Text* pattern_text,integer errors, Text* 
 
     text_text->reset();
     pattern_text->reset();
-    char tmp_name[]= "/media/SSD/fileXXXXXX";
+    char tmp_name[]= "/tmp/fileXXXXXX";
 
     //generate filename
     fd = mkstemp(tmp_name);

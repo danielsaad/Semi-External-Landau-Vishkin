@@ -27,7 +27,7 @@ int main(int argc, char** argv){
     Text* out;
 
     if(argc!=5){
-        std::cerr << "Error " << "\n" << "Usage: ./LandauVishkin <text> <pattern> <number of errors> <output>\n";
+        std::cerr << "Error " << "\n" << "Usage: ./example <text> <pattern> <number of errors> <output>\n";
         exit(EXIT_FAILURE);
     }
 
@@ -36,14 +36,14 @@ int main(int argc, char** argv){
         p = new Text(argv[2],std::ios::in | std::ios::binary);
         errors = atoi(argv[3]);
         out = new Text(argv[4],std::ios::out);
-        landauVishkin_DC_Semi_External(t,p,errors,out);
-        landauVishkin_DC(t,p,errors,out);
-        landauVishkin_DC_Navarro(t,p,errors,out);
-        landauVishkin_DC_Parallel(t,p,errors,out);
+//        landauVishkin_DC_Semi_External(t,p,errors,out);
+//        landauVishkin_DC(t,p,errors,out);
+//        landauVishkin_DC_Navarro(t,p,errors,out);
+//        landauVishkin_DC_Parallel(t,p,errors,out);
         landauVishkin_RMQ<IndexRMQ<RegularLCP,RMQ_succinct<RegularLCP>>>(t,p,errors,out);
-        landauVishkin_RMQ<IndexRMQ<ByteLCP,RMQ_succinct<ByteLCP>>>(t,p,errors,out);
-        landauVishkin_DMin<Index<RegularLCP>>(t,p,errors,out);
-        landauVishkin_DMin<Index<ByteLCP>>(t,p,errors,out);
+//        landauVishkin_RMQ<IndexRMQ<ByteLCP,RMQ_succinct<ByteLCP>>>(t,p,errors,out);
+//        landauVishkin_DMin<Index<RegularLCP>>(t,p,errors,out);
+//        landauVishkin_DMin<Index<ByteLCP>>(t,p,errors,out);
         delete t;
         delete p;
         delete out;

@@ -309,8 +309,8 @@ void landauVishkin_DC_Semi_External(Text* text_text,Text* pattern_text,integer e
     integer i,j,x,y;
     integer count;
     integer l_array_size;
-    char tmp_name_input[] = "/media/SSD/fileXXXXXX" ;
-    char tmp_name_output[] = "/media/SSD/fileXXXXXX";
+    char tmp_name_input[] = "/tmp/fileXXXXXX" ;
+    char tmp_name_output[] = "/tmp/fileXXXXXX";
     integer* l_array_input;
     integer* l_array_output;
     integer next_read;
