@@ -23,7 +23,7 @@
 
 static const integer LV_DIRECT_MIN_BLOCK = 8;
 static const integer LV_STRING_SIZE = 5;
-static const integer LV_BLOCK_SIZE = 1<<24;
+static const integer LV_BLOCK_SIZE = 1024*1024;
 static const integer LV_NUMBER_OF_THREADS =4;
 
 typedef struct LV_DC_parallel_struct_t{
