@@ -36,7 +36,7 @@ cmake_policy(SET CMP0042 OLD) # MACOSX_RPATH migration
 # User Options
 #
 
-option(CELERO_COMPILE_DYNAMIC_LIBRARIES "Set to ON to build Celero for dynamic linking.  Use OFF for static." ON)
+option(CELERO_COMPILE_DYNAMIC_LIBRARIES "Set to ON to build Celero for dynamic linking.  Use OFF for static." OFF)
 option(CELERO_RUN_EXAMPLE_ON_BUILD "Set to ON to automatically run the example after a successful build." OFF)
 option(CELERO_ENABLE_EXPERIMENTS "Set to ON to automatically build all examples." ON)
 option(CELERO_ENABLE_FOLDERS "Enable to put Celero in its own solution folder under Visual Studio" ON)
