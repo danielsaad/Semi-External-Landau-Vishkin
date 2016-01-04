@@ -37,7 +37,7 @@
 
 /* user-defined options for output malloc()/free() operations to stderr */
 
-static const int log_operations = 0;    /* <-- set this to 1 for log output */
+static const int log_operations = 1;    /* <-- set this to 1 for log output */
 static const size_t log_operations_threshold = 1024*1024;
 
 /* option to use gcc's intrinsics to do thread-safe statistics operations */
