@@ -1,3 +1,8 @@
+cd build
+cmake ..
+make 
+make install
+
 cd external/libdivsufsort-2.0.1
 cd build
 cmake ..
