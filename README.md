@@ -14,23 +14,22 @@ cd libdivsufsort-2.0.1
 bash install.sh
 ```
 
-To compile the library and the example, one must execute the following commands:
+To compile the library and the example, one must run the following script:
 
 ```shell
-cd build
-cmake ..
-make
-make install
+bash install.sh
 ```
+
+It is necessary to have cmake instaled and g++ with support to c++11.
 
 ## Running 
 We have provided a full functional example of running the Landau Vishkin Algorithm, which is instaled in the bin folder
-after the previous commands.
+after the previous command.
 
 This examples executes  variations of such algorithm presented in our library.
 To execute one must do
 ```shell
-./LandauVishkin <text> <pattern> <number of errors> <output>
+/example <text-file> <pattern-file> <number of errors> <output-file> <variation>
 ```
 
 
