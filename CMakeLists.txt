@@ -16,7 +16,7 @@ link_directories("${CMAKE_SOURCE_DIR}/lib")
 
 add_subdirectory("${CMAKE_SOURCE_DIR}/src")
 add_subdirectory("${CMAKE_SOURCE_DIR}/example")
-
+add_subdirectory("${CMAKE_SOURCE_DIR}/benchmark")
 
 
 
