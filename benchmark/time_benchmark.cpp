@@ -68,7 +68,7 @@ int main(int argc, char** argv){
     }
     std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
-    cout << duration << endl;
+    cout << duration << " microseconds" <<  endl;
     delete t;
     delete p;
     delete out;
