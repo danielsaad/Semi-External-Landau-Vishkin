@@ -13,9 +13,9 @@ ExternalProject_Add(project_malloc_count
 )
 
 ExternalProject_Get_Property(project_malloc_count install_dir)
-add_library(libmalloc_count STATIC IMPORTED)
-set_property(TARGET libmalloc_count PROPERTY IMPORTED_LOCATION ${install_dir}/lib/libmalloc_count.a)
-add_dependencies(libmalloc_count project_malloc_count)
+add_library(lib_malloc_count STATIC IMPORTED)
+set_property(TARGET lib_malloc_count PROPERTY IMPORTED_LOCATION ${install_dir}/src/project_malloc_count/lib/libmalloc_count.a)
+add_dependencies(lib_malloc_count project_malloc_count)
 
 
 
@@ -26,20 +26,16 @@ ExternalProject_Add(project_libdivsufsort
 )
 
 ExternalProject_Get_Property(project_libdivsufsort install_dir)
-add_library(libdivsufsort STATIC IMPORTED)
-add_library(libdivsufsort64 STATIC IMPORTED)
-MESSAGE(STATUS "Installdir eh = " ${install_dir})
-set_property(TARGET libdivsufsort PROPERTY IMPORTED_LOCATION ${install_dir}/lib/libdivsufsort.a)
-set_property(TARGET libdivsufsort PROPERTY IMPORTED_LOCATION ${install_dir}/lib/libdivsufsort64.a)
-add_dependencies(libdivsufsort project_libdivsufsort)
+add_library(lib_divsufsort STATIC IMPORTED)
+add_library(lib_divsufsort64 STATIC IMPORTED)
+set_property(TARGET lib_divsufsort PROPERTY IMPORTED_LOCATION ${install_dir}/src/project_libdivsufsort-build/lib/libdivsufsort.a)
+set_property(TARGET lib_divsufsort64 PROPERTY IMPORTED_LOCATION ${install_dir}/src/project_libdivsufsort-build/lib/libdivsufsort64.a)
+add_dependencies(lib_divsufsort project_libdivsufsort)
+add_dependencies(lib_divsufsort64 project_libdivsufsort)
 
-include_directories(${install_dir}/include)
+include_directories(${install_dir}/src/project_libdivsufsort-build/include)
 
-#set(LIBDIVSUFSORT_DIR "${CMAKE_SOURCE_DIR}/external/libdivsufsort-2.0.1")
-#include_directories("${LIBDIVSUFSORT_DIR}/include")
 include_directories("${CMAKE_SOURCE_DIR}/include")
-
-
 add_subdirectory("${CMAKE_SOURCE_DIR}/src")
 add_subdirectory("${CMAKE_SOURCE_DIR}/example")
 add_subdirectory("${CMAKE_SOURCE_DIR}/benchmark")

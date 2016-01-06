@@ -1,11 +1,11 @@
 #ifndef INDEX_HPP
 #define INDEX_HPP
 #include <unordered_map>
-#include <divsufsort.h>
+#include "divsufsort.h"
+#include "divsufsort64.h"
 #include "RMQ.hpp"
 #include "types.hpp"
 #include "text.hpp"
-
 
 template<class CLCP>
 class Index{
