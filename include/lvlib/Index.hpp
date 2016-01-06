@@ -79,8 +79,8 @@ public:
 
 class ByteLCP{
 public:
-    struct proxy{
-        proxy(ByteLCP& ref,integer index):_ref(ref),_i(index){}
+    struct Proxy{
+        Proxy(ByteLCP& ref,integer index):_ref(ref),_i(index){}
         void operator=(integer value){
             if(value<255){
                 _ref._lcp[_i]=value;
@@ -90,7 +90,7 @@ public:
                 _ref._hash[_i] = value;
             }
         }
-        operator integer const &(){
+        operator const integer&() const{
             if(_ref._lcp[_i]<255)
                 return(_ref._lcp[_i]);
             else
@@ -105,10 +105,9 @@ public:
         _lcp = new byte[size];
     }
 
-    proxy operator [](integer i){
-        return proxy(*this,i);
+    Proxy operator [](integer i){
+        return Proxy(*this,i);
     }
-
 
     byte* _lcp;
     std::unordered_map<integer,integer> _hash;

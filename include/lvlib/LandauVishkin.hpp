@@ -280,7 +280,7 @@ integer directMin(TSA* sa,word i,word j){
     auto lcp = sa->_lcp;
     integer minLCP = (*lcp)[i];
     for(word k=i+1;k<j;k++){
-        minLCP = std::min(minLCP,(*lcp)[k]);
+        minLCP = std::min(minLCP,(integer)(*lcp)[k]);
     }
     return(minLCP);
 }

@@ -1,5 +1,5 @@
 add_executable(time_benchmark time_benchmark.cpp)
 add_executable(memory_benchmark memory_benchmark.cpp)
 target_link_libraries(time_benchmark lv divsufsort pthread)
-target_link_libraries(memory_benchmark lv divsufsort pthread malloc_count dl)
+target_link_libraries(memory_benchmark lv divsufsort pthread  ${lib_malloc_count} dl)
 install(TARGETS time_benchmark memory_benchmark RUNTIME DESTINATION bin)
