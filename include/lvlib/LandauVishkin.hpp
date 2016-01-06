@@ -277,9 +277,10 @@ integer directComparisons(TSA* sa,word i,word j){
 
 template<class TSA>
 integer directMin(TSA* sa,word i,word j){
-    integer minLCP = (*(sa->_lcp))[i];
+    auto lcp = sa->_lcp;
+    integer minLCP = (*lcp)[i];
     for(word k=i+1;k<j;k++){
-        minLCP = std::min((*(sa->_lcp))[k],minLCP);
+        minLCP = std::min(minLCP,(*lcp)[k]);
     }
     return(minLCP);
 }

@@ -65,27 +65,51 @@ class RegularLCP{
 public:
     RegularLCP(integer size){_lcp = new integer[size];}
 
-    integer operator[](const integer i);
-    void set(const integer i, const integer l){ _lcp[i]  = l; }
-    integer* _lcp;
+    const integer& operator[](const integer i) const{
+        return _lcp[i];
+    }
+    integer& operator [](const integer i){
+        return _lcp[i];
+    }
 
+    integer* _lcp;
     ~RegularLCP(){ delete[] _lcp; }
 };
 
 
 class ByteLCP{
- public:
-    ByteLCP(integer size){_lcp = new byte[size];}
-    integer operator[](const integer i);
-    void set(const integer i, const integer l){
-        if(l<255){
-            _lcp[i] = l;
+public:
+    struct proxy{
+        proxy(ByteLCP& ref,integer index):_ref(ref),_i(index){}
+        void operator=(integer value){
+            if(value<255){
+                _ref._lcp[_i]=value;
+            }
+            else{
+                _ref._lcp[_i] = 255;
+                _ref._hash[_i] = value;
+            }
         }
-        else{
-            _lcp[i] = 255;
-           _hash[i] = l;
+        operator integer const &(){
+            if(_ref._lcp[_i]<255)
+                return(_ref._lcp[_i]);
+            else
+                return(_ref._hash[_i]);
         }
+        ByteLCP& _ref;
+        integer _i;
+    };
+
+
+    ByteLCP(integer size){
+        _lcp = new byte[size];
     }
+
+    proxy operator [](integer i){
+        return proxy(*this,i);
+    }
+
+
     byte* _lcp;
     std::unordered_map<integer,integer> _hash;
 
@@ -123,11 +147,11 @@ IndexRMQ<CLCP,CRMQ>::IndexRMQ(Text *T){
             while(_textStr[i+h]==_textStr[k+h]){
                 h++;
             }
-            _lcp->set(_isa[i], h);
+            _lcp[_isa[i]] =  h;
             if(h>0) h--;
         }
         else{
-            _lcp->set(_isa[i], 0);
+            _lcp[_isa[i]] =  0;
         }
     }
     //Computes RMQ
@@ -172,11 +196,11 @@ Index<CLCP>::Index(Text *T){
             while(_textStr[i+h]==_textStr[k+h]){
                 h++;
             }
-            _lcp->set(_isa[i], h);
+            _lcp[_isa[i]] = h;
             if(h>0) h--;
         }
         else{
-            _lcp->set(_isa[i], 0);
+            _lcp[_isa[i]] = 0;
         }
     }
 }
@@ -186,18 +210,6 @@ template<class CLCP> Index<CLCP>::~Index(){
     delete[] _isa;
     delete _lcp;
     delete[] _textStr;
-}
-
-inline integer ByteLCP::operator[](const integer i){
-    if(_lcp[i]<255)
-        return(_lcp[i]);
-    else
-        return(_hash[i]);
-}
-
-
-inline integer RegularLCP::operator [](const integer i){
-    return(_lcp[i]);
 }
 
 
