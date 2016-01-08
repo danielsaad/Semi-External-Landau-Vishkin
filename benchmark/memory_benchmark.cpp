@@ -9,12 +9,11 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
-#include <chrono>
 #include <lvlib/LandauVishkin.hpp>
 #include <lvlib/text.hpp>
 #include <lvlib/RMQ.hpp>
 #include <lvlib/Index.hpp>
-
+#include "malloc_count.h"
 
 /**
  * argv[1] = text

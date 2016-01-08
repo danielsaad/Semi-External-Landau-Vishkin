@@ -63,12 +63,14 @@ public:
 
 class RegularLCP{
 public:
-    RegularLCP(integer size){_lcp = new integer[size];}
+    RegularLCP(integer size){
+        _lcp = new integer[size];
+    }
 
-    const integer& operator[](const integer i) const{
+    const integer& operator[](integer i) const{
         return _lcp[i];
     }
-    integer& operator [](const integer i){
+    integer& operator [](integer i){
         return _lcp[i];
     }
 
@@ -146,11 +148,11 @@ IndexRMQ<CLCP,CRMQ>::IndexRMQ(Text *T){
             while(_textStr[i+h]==_textStr[k+h]){
                 h++;
             }
-            _lcp[_isa[i]] =  h;
+            (*_lcp)[_isa[i]] =  h;
             if(h>0) h--;
         }
         else{
-            _lcp[_isa[i]] =  0;
+            (*_lcp)[_isa[i]] =  0;
         }
     }
     //Computes RMQ
@@ -195,11 +197,11 @@ Index<CLCP>::Index(Text *T){
             while(_textStr[i+h]==_textStr[k+h]){
                 h++;
             }
-            _lcp[_isa[i]] = h;
+            (*_lcp)[_isa[i]] = h;
             if(h>0) h--;
         }
         else{
-            _lcp[_isa[i]] = 0;
+            (*_lcp)[_isa[i]] = 0;
         }
     }
 }

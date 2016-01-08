@@ -3,7 +3,7 @@ project("Landau Vishkin Library" CXX)
 include(ExternalProject)
 SET(optmization_flags " -std=c++11 -O2 ")
 set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}")
-set(CMAKE_CXX_FLAGS "-O2 -std=c++11") 
+set(CMAKE_CXX_FLAGS "-Wall -g -std=c++11")
 
 
 ### EXTERNAL LIBRARIES ###
@@ -17,6 +17,7 @@ add_library(lib_malloc_count STATIC IMPORTED)
 set_property(TARGET lib_malloc_count PROPERTY IMPORTED_LOCATION ${install_dir}/src/project_malloc_count/lib/libmalloc_count.a)
 add_dependencies(lib_malloc_count project_malloc_count)
 
+include_directories(${install_dir}/src/project_malloc_count/)
 
 
 ExternalProject_Add(project_libdivsufsort
